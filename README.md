@@ -289,9 +289,8 @@ Observation: Using a large `neighboring size = 35`, results in a more generalize
 
 ![case3](https://github.com/user-attachments/assets/ab51b6ab-189c-4a8c-bcce-12b7e12bfab7)
 
-### &nbsp;&nbsp;&nbsp;3. Ellipses Detection
 
-### &nbsp;&nbsp;&nbsp;4. Active Contour Model (Snakes)
+### &nbsp;&nbsp;&nbsp;3. Active Contour Model (Snakes)
 It is a powerful technique used in image processing for tasks such as object tracking and segmentation. The model works by iteratively adjusting a contour to fit the edges in an image, based on an energy minimization
 process.
 
@@ -471,6 +470,174 @@ Computation_time: 129.2920205593109 sec
 
 
 ---
+## Image Segmentation
+Image segmentation is the process of partitioning an image into multiple segments to simplify its analysis. It is commonly used to isolate objects or regions of interest in an image.
+
+### I. Optimal Thresholding
+### &nbsp;&nbsp;&nbsp;1. Global
+
+![global ](https://github.com/user-attachments/assets/d733020a-7434-4242-96aa-259864997b48)
+
+### &nbsp;&nbsp;&nbsp;1. Local
+
+### Parameters:
+- `block_size` = 20
+
+### Observation:
+In regions with intricate details or sharp-intensity transitions, smaller blocks can capture nuances more effectively.
+
+![image](https://github.com/user-attachments/assets/24c7d37c-6094-429e-b8a0-2a6d74a59d52)
+
+- `block_size` = 50
+
+### Observation:
+With a moderate block size, a balance between local analysis
+and computational efficiency is achieved.
+
+The segmentation results tend to be smoother compared to
+smaller block sizes due to averaging effects over larger
+regions.
+
+
+![image](https://github.com/user-attachments/assets/3452d9d8-cd5a-4036-9ee7-245fd9e1937f)
+
+- `block_size` = 80
+
+### Observation:
+Larger block sizes lead to more global analysis of pixel
+intensities, encompassing broader regions within the image.
+
+![image](https://github.com/user-attachments/assets/cc3c5d10-b0ce-47e3-880e-2d2e71cc19a2)
+
+
+### II. Otsu Thresholding
+### &nbsp;&nbsp;&nbsp;1. Global
+
+![image](https://github.com/user-attachments/assets/819a6adf-fdf4-42c3-a94c-4c3cec26f2ab)
+
+### &nbsp;&nbsp;&nbsp;2. Local
+### Parameters
+- `block_size` = 50
+
+![image](https://github.com/user-attachments/assets/1507d85d-2208-4b04-a997-f6a1a7403de6)
+
+- `block_size` = 80
+
+![image](https://github.com/user-attachments/assets/1683365e-2bd7-4c1f-a3cf-a771f2e2447a)
+
+### III. Spectral Thresholding
+### &nbsp;&nbsp;&nbsp;1. Global
+
+### Parameters:
+- `number of classes` = 2
+
+![image](https://github.com/user-attachments/assets/7a63535d-f821-4d1c-a55b-8a7bc6353403)
+
+- `number of classes` = 3
+
+![image](https://github.com/user-attachments/assets/129bde0f-f109-477d-8cbf-53aa356e3457)
+
+- `Increase the number of classes more and more` 
+
+![image](https://github.com/user-attachments/assets/33c50154-2855-4cfb-85a2-23704611333c)
+
+### Conclusion:
+With each increment in the number of classes, the algorithm will compute an
+additional threshold value. These thresholds aim to segment the image into more distinct intensity levels or regions.
+
+And because the image has almost three peaks, if the chosen number of classes equals `3` the algorithm will allow for finer segmentation.
+
+And if we increase it more and more may lead to wasted computational resources and potentially noisy segmentation results, It's generally advisable to choose the number of classes based on the information present in the histogram of the image.
+
+
+### &nbsp;&nbsp;&nbsp;2. Local
+
+### Parameters:
+- `Smaller Window Size` = 25
+
+![image](https://github.com/user-attachments/assets/f0576fcf-122d-4182-a8ef-d9f3932c2207)
+
+- `Larger Window Size` = 70
+
+![image](https://github.com/user-attachments/assets/dc2ecfe1-d335-40d2-9c1f-85ed4823d2fa)
+
+
+### VI. K-means Clustering
+### Parameters:
+- `# Clusters` = 2
+- `# Iterations` = 15
+
+![image](https://github.com/user-attachments/assets/4d6c5eb2-146a-4765-865b-cefd7e5d06b8)
+
+- `# Clusters` = 5
+- `# Iterations` = 15
+
+![image](https://github.com/user-attachments/assets/dd8315ed-ac65-4a8e-8e2a-94077da9a7df)
+
+
+### V. Region Growing Segmentation
+- `Threshold` = 4
+
+![image](https://github.com/user-attachments/assets/afef461b-c2ed-45db-946d-1b4c0e9c65e6)
+
+- `Threshold` = 50
+
+![image](https://github.com/user-attachments/assets/c423e11a-7607-425f-be37-a99ae98e3ead)
+
+### Observation:
+As the threshold increases the segmented region is expected to grow progressively larger, incorporating more neighbouring pixels that meet the heightened similarity criterion.
+
+### VI. Agglomerative Clustering
+
+- `Clusters` = 10
+- `Threshold` = 15
+
+![image](https://github.com/user-attachments/assets/0ca0e119-a9f3-4aab-bd97-9d6ff5217bbf)
+
+- `Clusters` = 5
+- `Threshold` = 15
+
+![image](https://github.com/user-attachments/assets/c9a428b9-1ad6-48fb-974b-59e9c7345785)
+
+### Observation: 
+Increasing the number of clusters will result in a greater
+number of clusters in the output image. Each cluster will represent a distinct color group, potentially leading to finer details but also increasing complexity.
+
+- `Clusters` = 10
+- `Threshold` = 50
+
+![image](https://github.com/user-attachments/assets/127a320a-ce0a-4d6e-a9f6-d56ae57e1860)
+
+- `Clusters` = 10
+- `Threshold` = 15
+
+![image](https://github.com/user-attachments/assets/72ace85e-99a5-4107-b8e4-af96f7773b9a)
+
+### Observation: 
+A higher initial number of clusters leads to finer initial
+clustering, potentially capturing more subtle color variations in the image.
+However, it may also increase the computational complexity of the algorithm.
+
+
+### VII. Mean shift Clustering
+
+- `Bandwidth` = 60
+
+![image](https://github.com/user-attachments/assets/0e49af5a-0b12-4b41-aabf-d9fa19de6b55)
+
+- `Bandwidth` = 180
+
+![image](https://github.com/user-attachments/assets/7efc1165-03fe-4103-b82a-1b561242aa8d)
+
+- `Bandwidth` = 350
+
+![image](https://github.com/user-attachments/assets/76690ec3-6baa-4231-999c-1a409a14a163)
+
+
+### VIII. RGB to LUV Conversion
+
+![image](https://github.com/user-attachments/assets/33ed4632-af7e-457e-b12d-578175957659)
+---
 
 ## Face Detection and Recognition
 
@@ -480,11 +647,4 @@ Face detection involves identifying human faces in digital images. Face recognit
 
 ---
 
-## Image Segmentation
-
-### Description
-Image segmentation is the process of partitioning an image into multiple segments to simplify its analysis. It is commonly used to isolate objects or regions of interest in an image.
-
-
----
 
