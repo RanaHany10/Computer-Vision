@@ -641,8 +641,11 @@ However, it may also increase the computational complexity of the algorithm.
 
 ## Face Detection and Recognition
 
-### Description
 Face detection involves identifying human faces in digital images. Face recognition goes a step further by identifying or verifying individuals based on facial features.
+
+### I. Face Detection
+
+![Image](https://github.com/user-attachments/assets/b0f1dc1a-9f9d-40de-85d2-2d5ee9469b18)
 
 
 ---
