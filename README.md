@@ -649,7 +649,7 @@ Face detection involves identifying human faces in digital images. Face recognit
 
 ![Image](https://github.com/user-attachments/assets/345f67de-55cb-4688-8791-a021787d58d4)
 
-### II. Face Detection
+### II. Face Recognition
 
 - `Threshold` = 2000
 
@@ -686,6 +686,14 @@ A much higher threshold value leads to a false positive response illustrating th
 ### Justification:
 A very high threshold value increases the likelihood of incorrectly recognizing unknown faces as known ones. 
 
----
+## Contributors:
+<div align="center">
+  
+| <a href="https://github.com/AyaSalahrekaby"><img src="https://avatars.githubusercontent.com/u/102102255?v=4" width="100px" alt="AyaSalahrekaby"></a> | <a href="https://github.com/RanaHany10"><img src="https://avatars.githubusercontent.com/u/115092108?v=4" width="100px" alt="RanaHany10"></a> | <a href="https://github.com/sarah1ibrahim"><img src="https://avatars.githubusercontent.com/u/115026687?v=4" width="100px" alt="sarah1ibrahim"></a> | <a href="https://github.com/nora908"><img src="https://avatars.githubusercontent.com/u/104656203?v=4" width="100px" alt="nora908"></a> | <a href="https://github.com/JasmineTJ"><img src="https://avatars.githubusercontent.com/u/105980355?v=4" width="100px" alt="JasmineTJ"></a> |
+|:---:|:---:|:---:|:---:|:---:|
+| [Aya Salah](https://github.com/AyaSalahrekaby) | [Rana Hany](https://github.com/RanaHany10) | [Sarah Ibrahim](https://github.com/sarah1ibrahim) | [Nora Osama](https://github.com/nora908) |[Yasmin ElGamal](https://github.com/JasmineTJ) |
+
+</div>
+
 
 
