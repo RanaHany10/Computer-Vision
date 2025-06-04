@@ -645,8 +645,46 @@ Face detection involves identifying human faces in digital images. Face recognit
 
 ### I. Face Detection
 
-![Image](https://github.com/user-attachments/assets/b0f1dc1a-9f9d-40de-85d2-2d5ee9469b18)
+![Image](https://github.com/user-attachments/assets/fcea76ad-2fd9-4063-9c0a-7b0336f88e00)
 
+![Image](https://github.com/user-attachments/assets/345f67de-55cb-4688-8791-a021787d58d4)
+
+### II. Face Detection
+
+- `Threshold` = 2000
+
+![Image](https://github.com/user-attachments/assets/27632c68-cf16-4520-aa77-4b430ff13a79)
+
+### Observation: 
+Despite using a lower threshold value, the algorithm failed to recognize the input image as a known face. 
+
+### Justification:
+A lower threshold value makes the algorithm less likely to recognize known faces. However, it also decreases the risk of false positives. 
+
+- `Threshold` = 3000
+
+![Image](https://github.com/user-attachments/assets/9e8ad897-5b39-4ae7-a79f-b03a09de3730)
+
+### Observation: 
+By increasing the threshold value, the algorithm successfully recognized the input image as a known face. This suggests that a larger threshold is needed in this case to cover the lowest distance.
+
+### Justification:
+A higher threshold value increases the likelihood of correctly recognizing unknown faces as known ones. On the other hand, it may increase the risk of false positive recognition.
+
+![Image](https://github.com/user-attachments/assets/9e9cb5c5-fd67-4e88-91d6-605ecaba4124)
+
+### Observation: 
+But in this case, this image does not already exist in the training dataset so, it makes sense to be predicted as a true negative.
+
+- `Threshold` = 10000
+
+![Image](https://github.com/user-attachments/assets/6b505704-e18d-4fcf-8948-97d89da9ee03)
+
+### Observation: 
+A much higher threshold value leads to a false positive response illustrating the criticality of choosing a suitable threshold value.
+
+### Justification:
+A very high threshold value increases the likelihood of incorrectly recognizing unknown faces as known ones. 
 
 ---
 
