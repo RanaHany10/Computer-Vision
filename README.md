@@ -40,11 +40,11 @@ We implemented various filters to enhance image quality and reduce noise *(e.g. 
 
 ![Average](https://github.com/user-attachments/assets/daf02bfe-0038-4488-8c07-e11fe3d7b0bc)
 
-### &nbsp;&nbsp;&nbsp;1. Gaussian Filter Applied on Uniform Noise
+### &nbsp;&nbsp;&nbsp;2. Gaussian Filter Applied on Uniform Noise
 
 ![gaussian](https://github.com/user-attachments/assets/55d583bd-218c-48b8-a867-27ef32d3682c)
 
-### &nbsp;&nbsp;&nbsp;1. Median Filter Applied on Uniform Noise
+### &nbsp;&nbsp;&nbsp;3. Median Filter Applied on Uniform Noise
 
 ![median](https://github.com/user-attachments/assets/bd8acc1e-69c4-42f8-bb68-50e1f8d3066d)
 
